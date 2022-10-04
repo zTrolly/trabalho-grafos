@@ -2,10 +2,13 @@
 import sys
 sys.path.insert(0, '../RandomGraphs')
 sys.path.insert(1, '../BridgeIdentification')
+sys.path.insert(2, '../BridgeIdentification/EulerianPath')
 
 # Importar classes e metodos de outros arquivos
 from random_graph import Graph # Classe
 from naive import naive_bridge # Metodo
+from tarjan_1974 import tarjan # Metodo
+from eulerian_path import eulerianPath # Metodo
 
 # Importando bibliotecas
 import time
@@ -34,8 +37,10 @@ def createGraphTest():
 
 def main():
     graph = createGraphTest()
-    pontes = naive_bridge(graph.graph)
-    print(pontes)
+    naive_bridge(graph.graph)
+    eulerianPath()
+    tarjan()
+    graph.printGraph()
 
 if __name__ == "__main__":
     main()

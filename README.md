@@ -105,3 +105,11 @@ Todos os experimentos foram realizados em uma máquina com 16GB de memória RAM 
 </table>
 
 </div>
+
+--------------------
+<p style="font-size: 16px"> <strong> Organização de diretórios: </strong> </p>
+
+- `Application:` esse diretório é onde contém o código fonte da aplicação, chamada de todos os métodos para a execução, mostrando o resultado para o usuário.
+- `RandomGraphs:` possui o código feito para criação de grafos de N quantidade de vértices dos tipos euleriano, semi-euleriano e não euleriano.
+- `BridgeIdentification:` implementação dos métodos Naive e Tarjan.
+  - `EulerianPath:` implementação do algoritmo de busca de um caminho euleriano no grafo criado.

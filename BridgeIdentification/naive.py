@@ -7,3 +7,4 @@ def naive_bridge(grafo):
     - Caso tenha mais de um componente adicionar a aresta na lista de pontes.
     - Retornar lista de pontes após passar por todas as arestas
     '''
+    print('Linked test path - Naive')
