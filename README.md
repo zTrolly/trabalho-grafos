@@ -10,8 +10,8 @@ Além dos métodos descritos acima a implementação deverá encontrar um caminh
 - [Método de Fleury](LINK_METODO_FLEURY)
 
 Alguns experimentos devem ser realizados em apenas uma máquina para avaliar o tempo gasto para as duas estrátegias de identificação de pontes em grafos aleatórios, sendo os grafos eulerianos, semi-eulerianos e não eulerianos contendo 100, 1000, 10000, 100000 vértices para cada tipo de grafo.
-- [Código Python - Criação grafos aleatórios](https://github.com/zTrolly/trabalho-grafos/blob/main/Random%20graphs/random_graph.py)
-- [Agoritmo e explicação de cada grafo](https://github.com/zTrolly/trabalho-grafos/blob/main/Random%20graphs/README.md)
+- [Código Python - Criação grafos aleatórios](https://github.com/zTrolly/trabalho-grafos/blob/main/RandomGraphs/random_graph.py)
+- [Agoritmo e explicação de cada grafo](https://github.com/zTrolly/trabalho-grafos/blob/main/RandomGraphs/README.md)
 
 --------------------
 <p style="font-size: 16px"> <strong> Resultado avaliação - tempo médio: </strong> </p>
