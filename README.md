@@ -18,19 +18,6 @@ Alguns experimentos devem ser realizados em apenas uma máquina para avaliar o t
 
 Todos os experimentos foram realizados em uma máquina com 16GB de memória RAM 4666MHz, com uma CPU i7-11600K - 4.3GHz, com SSD. Essas especificações de máquina podem ser alteradas.
 
-
-<style> 
-.table-responsive{
-  width: 100% !important;
-}
-
-.table {
-    border: 1px solid white;
-    width: 50% !important;
-    margin: auto;
-    margin-top: 5px;
-}
-</style>
 <div class="table-responsive">
 
 <table class="table">
