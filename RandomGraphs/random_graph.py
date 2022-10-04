@@ -1,4 +1,3 @@
-from genericpath import exists
 import random
 
 class Graph:
@@ -49,11 +48,3 @@ class Graph:
     def printGraph(self):
         for i in range(0, len(self.graph)):
             print(self.graph[i])
-
-def main():
-    graph = Graph(10)
-    graph.notEurelianGraph()
-    graph.printGraph()
-
-if __name__ == "__main__":
-    main()

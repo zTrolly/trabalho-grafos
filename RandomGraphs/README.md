@@ -10,15 +10,15 @@ Para a criação dos grafos aleatórios foram utilizadas as seguintes técnicas:
 
 `Eureliano:`
 <div align="center">
-  <img src="../Imagens/eureliano.png" width="350" title="hover text">
+  <img src="../_Imagens/eureliano.png" width="350" title="hover text">
 </div>
 
 `Semi-Eureliano:`
 <div align="center">
-  <img src="../Imagens/semi-eureliano.png" width="350" title="hover text">
+  <img src="../_Imagens/semi-eureliano.png" width="350" title="hover text">
 </div>
 
 `Não-Eureliano:`
 <div align="center">
-  <img src="../Imagens/not-eureliano.png" width="350" title="hover text">
+  <img src="../_Imagens/not-eureliano.png" width="350" title="hover text">
 </div>
