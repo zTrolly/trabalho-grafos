@@ -21,9 +21,9 @@ def createGraphTest():
     graph.addEdges(0, 1)
     graph.addEdges(0, 3)
     graph.addEdges(0, 4)
+    graph.addEdges(1, 2)
     graph.addEdges(1, 3)
     graph.addEdges(1, 4)
-    graph.addEdges(1, 2)
     graph.addEdges(2, 3)
     graph.addEdges(2, 4)
     graph.addEdges(2, 5)
@@ -37,10 +37,7 @@ def createGraphTest():
 
 def main():
     graph = createGraphTest()
-    naive_bridge(graph.graph)
-    eulerianPath()
-    tarjan()
-    graph.printGraph()
+    print(naive_bridge(graph.graph))
 
 if __name__ == "__main__":
     main()
