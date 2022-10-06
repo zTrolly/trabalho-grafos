@@ -40,8 +40,14 @@ def createGraphTest():
     return graph
 
 def main():
-    graph = createGraphTest()
+    # graph = createGraphTest()
+    # print(naive_bridge(graph.graph, graph.num_vertices))
+    graph = Graph(10000)
+    graph.eurelianGraph()
+    start = time.time()
     print(naive_bridge(graph.graph, graph.num_vertices))
+    end = time.time()
+    print(f'Time: {end - start}')
 
 if __name__ == "__main__":
     main()
