@@ -42,22 +42,13 @@ def createGraphTest():
 def main():
     # graph = createGraphTest()
     # print(naive_bridge(graph.graph, graph.num_vertices))
-<<<<<<< Updated upstream
-    graph = Graph(10000)
-=======
-
     graph = Graph(100000)
->>>>>>> Stashed changes
     graph.eurelianGraph()
     start = time.time()
     print(naive_bridge(graph.graph, graph.num_vertices))
     end = time.time()
-<<<<<<< Updated upstream
     print(f'Time: {end - start}')
-=======
     print(f'Tempo de execução = {end - start} segundos.')
-
->>>>>>> Stashed changes
 
 if __name__ == "__main__":
     main()
