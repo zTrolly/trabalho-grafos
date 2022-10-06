@@ -3,11 +3,11 @@
 > **Status do Projeto:** Em desenvolvimento ⚠️
 
 O intuito desse trabalho prático é criar dois métodos para indentificação de pontes. Pontes são arestas cuja a remoção torna o grafo desconexo. Dentre as aplicações de indentificações de pontes está encontrar os caminhos ou ciclos eurelianos em diferentes grafos, sendo os métodos de identificação de pontes e suas respectivos diretórios:
-- [Método Naive](LINK_METODO_NAIVE)
-- [Método de Tarjan (1974)](LINK_METODO_TARJAN)
+- [Método Naive](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/naive.py)
+- [Método de Tarjan (1974)](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/tarjan_1974.py)
 
 Além dos métodos descritos acima a implementação deverá encontrar um caminho euleriano em um grafo qualquer ou determinar que ele não existe utilizando o seguinte método:
-- [Método de Fleury](LINK_METODO_FLEURY)
+- [Método de Fleury](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/EulerianPath/eulerian_path.py)
 
 Alguns experimentos devem ser realizados em apenas uma máquina para avaliar o tempo gasto para as duas estrátegias de identificação de pontes em grafos aleatórios, sendo os grafos eulerianos, semi-eulerianos e não eulerianos contendo 100, 1000, 10000, 100000 vértices para cada tipo de grafo.
 - [Código Python - Criação grafos aleatórios](https://github.com/zTrolly/trabalho-grafos/blob/main/RandomGraphs/random_graph.py)
