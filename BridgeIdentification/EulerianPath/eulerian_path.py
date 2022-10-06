@@ -1,7 +1,15 @@
 from naive import is_connected
 
-
-# https://www2.eecs.berkeley.edu/Pubs/TechRpts/1974/ERL-m-427.pdf
+'''
+Para entender como funciona o algoritmo de Fleury, considere o grafo da figura 4a da ligaçao.
+Suponhamos que o algoritmo começa com o vértice 6. Ele pode escolher uma das arestas h, d, e ou i.
+Supondo que ele escolhe d, ele se encontra depois no vértice 2, onde ele é obrigado a seguir pela ponte que liga com o vértice 5.
+Isso é ilustrado na figura 4b. Nesse momento, ele pode escolher entre b, g o h. O último é descartado por ser uma ponte.
+Então sobram somente b e g. Supondo que b é selecionado, ele chega ao vértice 1, como ilustrado na figura 4c.
+Nas três próximas etapas, ele não tem escolha. Chegando ao vértice 6, de novo ele tem mais du uma opção.
+Em mais três etapas, ele volta à origem, o que completa o circuito euleriano.
+'''
+# https://www.geeksforgeeks.org/fleurys-algorithm-for-printing-eulerian-path/
 def eulerianPath(graph, bridges):
     C = [] #circuit
     V = [] #vertices
