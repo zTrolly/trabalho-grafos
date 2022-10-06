@@ -1,5 +1,7 @@
 from naive import is_connected
 
+
+# https://www2.eecs.berkeley.edu/Pubs/TechRpts/1974/ERL-m-427.pdf
 def eulerianPath(graph, bridges):
     C = [] #circuit
     V = [] #vertices
