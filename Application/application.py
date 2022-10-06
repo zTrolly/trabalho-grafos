@@ -13,6 +13,10 @@ from eulerian_path import eulerianPath # Metodo
 # Importando bibliotecas
 import time
 
+# libs para testes
+from create_adjacencyList import sorting
+from create_adjacencyList import listaAdjacencia
+
 '''
 Criação do grafo de exemplo para testar os métodos
 '''
@@ -37,7 +41,7 @@ def createGraphTest():
 
 def main():
     graph = createGraphTest()
-    print(naive_bridge(graph.graph))
+    print(naive_bridge(graph.graph, graph.num_vertices))
 
 if __name__ == "__main__":
     main()
