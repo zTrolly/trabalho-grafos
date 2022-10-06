@@ -13,6 +13,10 @@ from eulerian_path import eulerianPath # Metodo
 # Importando bibliotecas
 import time
 
+# libs para testes
+from create_adjacencyList import sorting
+from create_adjacencyList import listaAdjacencia
+
 '''
 Criação do grafo de exemplo para testar os métodos
 '''
@@ -21,9 +25,9 @@ def createGraphTest():
     graph.addEdges(0, 1)
     graph.addEdges(0, 3)
     graph.addEdges(0, 4)
+    graph.addEdges(1, 2)
     graph.addEdges(1, 3)
     graph.addEdges(1, 4)
-    graph.addEdges(1, 2)
     graph.addEdges(2, 3)
     graph.addEdges(2, 4)
     graph.addEdges(2, 5)
@@ -36,11 +40,13 @@ def createGraphTest():
     return graph
 
 def main():
-    graph = createGraphTest()
-    naive_bridge(graph.graph)
-    eulerianPath()
-    tarjan()
-    graph.printGraph()
+    # graph = createGraphTest()
+    # print(naive_bridge(graph.graph, graph.num_vertices))
+    graph = Graph(100)
+    graph.eurelianGraph()
+    pontes = naive_bridge(graph.graph, graph.num_vertices)
+    lista_adj = listaAdjacencia(graph.graph, graph.num_vertices) # Lista de adjacenciado grafo aleatório
+    print(eulerianPath(lista_adj, pontes))
 
 if __name__ == "__main__":
     main()
