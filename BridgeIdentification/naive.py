@@ -10,8 +10,7 @@ def naive_bridge(grafo, num_vertices):
     for i in range(len(grafo)):
         grafo_aux = grafo.copy()
         grafo_aux.remove(grafo_aux[i])
-        grafo_aux_ordenado = sorting(grafo_aux)
-        lista_adj = listaAdjacencia(grafo_aux_ordenado, num_vertices)
+        lista_adj = listaAdjacencia(grafo_aux, num_vertices)
         if is_connected(lista_adj) == False:
             pontes.append(grafo[i])
     return pontes

@@ -18,6 +18,9 @@ Alguns experimentos devem ser realizados em apenas uma máquina para avaliar o t
 
 Todos os experimentos foram realizados em uma máquina com 16GB de memória RAM 4666MHz, com uma CPU i7-11600K - 4.3GHz, com SSD. Essas especificações de máquina podem ser alteradas.
 
+<br>
+
+<p style="font-size: 16px"> <strong> Método Naive: </strong> </p>
 <div class="table-responsive">
 
 <table class="table">
@@ -29,17 +32,17 @@ Todos os experimentos foram realizados em uma máquina com 16GB de memória RAM 
   <tr>
     <td>100</td>
     <td>Euleriano</td>
-    <td>X</td>
+    <td>0.0028 s.</td>
   </tr>
   <tr>
     <td>1000</td>
     <td>Euleriano</td>
-    <td>X</td>
+    <td>0.3447 s.</td>
   </tr>
   <tr>
     <td>10000</td>
     <td>Euleriano</td>
-    <td>X</td>
+    <td>42.5453 s.</td>
   </tr>
   <tr>
     <td>100000</td>
@@ -57,17 +60,17 @@ Todos os experimentos foram realizados em uma máquina com 16GB de memória RAM 
   <tr>
     <td>100</td>
     <td>Semi-euleriano</td>
-    <td>X</td>
+    <td>0.0029 s.</td>
   </tr>
   <tr>
     <td>1000</td>
     <td>Semi-euleriano</td>
-    <td>X</td>
+    <td>0.3480 s.</td>
   </tr>
   <tr>
     <td>10000</td>
     <td>Semi-euleriano</td>
-    <td>X</td>
+    <td>42.2774 s.</td>
   </tr>
   <tr>
     <td>100000</td>
@@ -85,17 +88,17 @@ Todos os experimentos foram realizados em uma máquina com 16GB de memória RAM 
   <tr>
     <td>100</td>
     <td>Não euleriano</td>
-    <td>X</td>
+    <td>0.0060 s.</td>
   </tr>
   <tr>
     <td>1000</td>
     <td>Não euleriano</td>
-    <td>X</td>
+    <td>0.8264 s.</td>
   </tr>
   <tr>
     <td>10000</td>
     <td>Não euleriano</td>
-    <td>X</td>
+    <td>42.6835 s.</td>
   </tr>
   <tr>
     <td>100000</td>
