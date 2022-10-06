@@ -42,13 +42,11 @@ def createGraphTest():
 def main():
     # graph = createGraphTest()
     # print(naive_bridge(graph.graph, graph.num_vertices))
-    graph = Graph(100000)
+    graph = Graph(100)
     graph.eurelianGraph()
-    start = time.time()
-    print(naive_bridge(graph.graph, graph.num_vertices))
-    end = time.time()
-    print(f'Time: {end - start}')
-    print(f'Tempo de execução = {end - start} segundos.')
+    pontes = naive_bridge(graph.graph, graph.num_vertices)
+    lista_adj = listaAdjacencia(graph.graph, graph.num_vertices) # Lista de adjacenciado grafo aleatório
+    print(eulerianPath(lista_adj, pontes))
 
 if __name__ == "__main__":
     main()
