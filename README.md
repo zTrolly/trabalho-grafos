@@ -21,7 +21,8 @@ Todos os experimentos foram realizados em uma máquina com 16GB de memória RAM 
 <br>
 
 <p style="font-size: 16px"> <strong> Método Naive: </strong> </p>
-<div class="table-responsive">
+
+<div align="center" class="table-responsive">
 
 <table class="table">
   <tr>
@@ -99,6 +100,97 @@ Todos os experimentos foram realizados em uma máquina com 16GB de memória RAM 
     <td>10000</td>
     <td>Não euleriano</td>
     <td>42.6835 s.</td>
+  </tr>
+  <tr>
+    <td>100000</td>
+    <td>Não euleriano</td>
+    <td>X</td>
+  </tr>
+</table>
+
+</div>
+
+<hr>
+
+<p style="font-size: 16px"> <strong> Método Tarjan: </strong> </p>
+<div align="center" class="table-responsive">
+
+<table class="table">
+  <tr>
+    <th>Vértices</th>
+    <th>Tipo grafo</th>
+    <th>Tempo</th>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>Euleriano</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>Euleriano</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>10000</td>
+    <td>Euleriano</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>100000</td>
+    <td>Euleriano</td>
+    <td>X</td>
+  </tr>
+</table>
+
+<table class="table">
+  <tr>
+    <th>Vértices</th>
+    <th>Tipo grafo</th>
+    <th>Tempo</th>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>Semi-euleriano</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>Semi-euleriano</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>10000</td>
+    <td>Semi-euleriano</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>100000</td>
+    <td>Semi-euleriano</td>
+    <td>X</td>
+  </tr>
+</table>
+
+<table class="table">
+  <tr>
+    <th>Vértices</th>
+    <th>Tipo grafo</th>
+    <th>Tempo</th>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>Não euleriano</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>1000</td>
+    <td>Não euleriano</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>10000</td>
+    <td>Não euleriano</td>
+    <td>X</td>
   </tr>
   <tr>
     <td>100000</td>
