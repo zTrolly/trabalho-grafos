@@ -1,34 +1,63 @@
 from create_adjacencyList import listaAdjacencia
+from naive import naive_bridge
+from tarjan_1974 import tarjan
+
 import time
 
-def FleuryNaive(graph, num_vertices):
+def FleuryNaive(edges, num_vertices):
     start = time.time()
     caminho = list()
-    adjacecy_list = listaAdjacencia(graph, num_vertices)
-    if isValidGraph(adjacecy_list) == True:
-        print('Não tem caminho euleriano')
+    adjacecy_list_graph_ = listaAdjacencia(edges, num_vertices)
+    pontes = naive_bridge(edges, num_vertices)
+    if isValidGraph(adjacecy_list_graph_) == True:
         caminho.append('VAZIO')
         end = time.time()
         return caminho, (end - start)
-    graph_ = graph.copy()
-    initial_vertex = getImparVertex(adjacecy_list)
-    for i in range(len(graph_)):
-        if degreeVertex(adjacecy_list, initial_vertex) > 1:
-            # Selecionar aresta {v, w} que nao seja ponte em graph_
-            caminho.append(graph_[i])
-            vertex_caminhado = 1 # selecionar vertice caminhado
+    initial_vertex = getImparVertex(adjacecy_list_graph_)
+    for i in range(len(edges)): # Passar por todas as arestas uma só vez
+        if degreeVertex(adjacecy_list_graph_, initial_vertex) > 1:
+            edge, vertex_caminhado = selectEdge(initial_vertex, adjacecy_list_graph_, pontes)
+            caminho.append(edge)
         else:
-            # Selecionar única aresta {v, w} em graph_
-            caminho.append(graph_[i])
-            vertex_caminhado = 1 # selecionar vertice caminhado
+            edge = [initial_vertex, adjacecy_list_graph_[initial_vertex][0]]
+            caminho.append(edge)
+            vertex_caminhado = adjacecy_list_graph_[initial_vertex][0]
         initial_vertex = vertex_caminhado
-        graph_.remove(graph_[i])
+        adjacecy_list_graph_[edge[0]].remove(vertex_caminhado)
+        adjacecy_list_graph_[edge[1]].remove(edge[0])
     end = time.time()
     return caminho, (end - start)
 
-def FleuryTarjan(graph):
-    adjacecy_list = listaAdjacencia(graph)
+def FleuryTarjan(graph, num_vertices):
+    start = time.time()
+    caminho = list()
+    adjacecy_list_graph_ = listaAdjacencia(graph, num_vertices)
+    pontes = tarjan(graph, num_vertices) # Única linha alterada para usar o método do tarjan -> mais eficiente.
+    if isValidGraph(adjacecy_list_graph_) == True:
+        caminho.append('VAZIO')
+        end = time.time()
+        return caminho, (end - start)
+    initial_vertex = getImparVertex(adjacecy_list_graph_)
+    for i in range(len(graph)): # Passar por todas as arestas uma só vez
+        if degreeVertex(adjacecy_list_graph_, initial_vertex) > 1:
+            edge, vertex_caminhado = selectEdge(initial_vertex, adjacecy_list_graph_, pontes)
+            caminho.append(edge)
+        else:
+            edge = [initial_vertex, adjacecy_list_graph_[initial_vertex][0]]
+            caminho.append(edge)
+            vertex_caminhado = adjacecy_list_graph_[initial_vertex][0]
+        initial_vertex = vertex_caminhado
+        adjacecy_list_graph_[edge[0]].remove(vertex_caminhado)
+        adjacecy_list_graph_[edge[1]].remove(edge[0])
+    end = time.time()
+    return caminho, (end - start)
 
+def selectEdge(vertex, adjacency_list, pontes):
+    for i in range(len(adjacency_list[vertex])):
+        edge = [vertex, adjacency_list[vertex][i]]
+        if edge not in pontes:
+            return [vertex, adjacency_list[vertex][i]], adjacency_list[vertex][i]
+    
 '''
 Pegar grau do vértice atual, escolhido
 '''

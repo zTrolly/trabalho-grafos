@@ -6,8 +6,6 @@ sys.path.insert(2, '../BridgeIdentification/EulerianPath')
 
 # Importar classes e metodos de outros arquivos
 from random_graph import Graph # Classe
-from naive import naive_bridge # Metodo
-from tarjan_1974 import tarjan # Metodo
 from eulerian_path import FleuryNaive # Metodo
 from eulerian_path import FleuryTarjan # Metodo
 
@@ -34,10 +32,9 @@ def createGraphTest():
     return graph
 
 def main():
-    graph = createGraphTest()
-    #print(naive_bridge(graph.graph, graph.num_vertices))
-    #graph = Graph(100)
-    #graph.eurelianGraph()
+    #graph = createGraphTest()
+    graph = Graph(1000)
+    graph.semiEurelianGraph()
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
