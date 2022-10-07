@@ -6,16 +6,8 @@ sys.path.insert(2, '../BridgeIdentification/EulerianPath')
 
 # Importar classes e metodos de outros arquivos
 from random_graph import Graph # Classe
-from naive import naive_bridge # Metodo
-from tarjan_1974 import tarjan # Metodo
-from eulerian_path import eulerianPath # Metodo
-
-# Importando bibliotecas
-import time
-
-# libs para testes
-from create_adjacencyList import sorting
-from create_adjacencyList import listaAdjacencia
+from eulerian_path import FleuryNaive # Metodo
+from eulerian_path import FleuryTarjan # Metodo
 
 '''
 Criação do grafo de exemplo para testar os métodos
@@ -40,13 +32,12 @@ def createGraphTest():
     return graph
 
 def main():
-    # graph = createGraphTest()
-    # print(naive_bridge(graph.graph, graph.num_vertices))
-    graph = Graph(100)
-    graph.eurelianGraph()
-    pontes = naive_bridge(graph.graph, graph.num_vertices)
-    lista_adj = listaAdjacencia(graph.graph, graph.num_vertices) # Lista de adjacenciado grafo aleatório
-    print(eulerianPath(lista_adj, pontes))
+    #graph = createGraphTest()
+    graph = Graph(1000)
+    graph.semiEurelianGraph()
+    caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
 
 if __name__ == "__main__":
     main()
