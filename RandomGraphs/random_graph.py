@@ -38,7 +38,7 @@ class Graph:
     def notEurelianGraph(self):
         for vertex in range(0, self.num_vertices):
             randomDegree = random.randint(1, 2)
-            for vertex_degree in range(0, randomDegree):
+            for _ in range(0, randomDegree):
                 randomEdgeV = random.randint(0, (self.num_vertices - 1))
                 while vertex == randomEdgeV:
                     randomEdgeV = random.randint(0, (self.num_vertices - 1))
