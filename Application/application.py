@@ -32,9 +32,9 @@ def createGraphTest():
     return graph
 
 def main():
-    #graph = createGraphTest()
-    graph = Graph(1000)
-    graph.semiEurelianGraph()
+    graph = createGraphTest()
+    # graph = Graph(1000)
+    # graph.semiEurelianGraph()
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
