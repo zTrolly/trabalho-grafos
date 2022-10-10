@@ -33,12 +33,17 @@ def createGraphTest():
     return graph
 
 def main():
-    # graph = createGraphTest()
-    graph = Graph(10000)
+    #graph = createGraphTest()
+    graph = Graph(2000)
     graph.semiEurelianGraph()
+
     caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
-    print(f'Caminho: {caminho}')
+    #print(f'Caminho: {caminho}')
+
+    caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    #print(f'Caminho: {caminho}')
 
 if __name__ == "__main__":
     main()
