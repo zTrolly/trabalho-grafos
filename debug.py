@@ -26,11 +26,10 @@ class Graph:
             self.addEdges(i, i + 1)
         self.addEdges((self.num_vertices - 1), 0)
 
+'''
+Funcionando, porém não aceita grande quantidade de recursividade
+'''
 def bridges(G):
-    if len(G) == 0:
-        return []
-    if len(G) == 1:
-        return []
     bridges = []
     n = len(G)
     visited = [False] * n
