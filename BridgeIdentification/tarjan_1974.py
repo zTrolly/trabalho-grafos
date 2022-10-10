@@ -1,38 +1,25 @@
 # https://www2.eecs.berkeley.edu/Pubs/TechRpts/1974/ERL-m-427.pdf
 # https://memgraph.com/docs/mage/algorithms/traditional-graph-analytics/bridges-algorithm
-def tarjan(G):
-    if len(G) == 0:
-        return []
-    if len(G) == 1:
-        return []
-    bridges = []
-    n = len(G)
-    visited = [False] * n
-    low = [float('inf')] * n
-    disc = [float('inf')] * n
-    parent = [-1] * n
-    def dfs(u, disc, low, parent, visited, bridges):
-        visited[u] = True
-        disc[u] = low[u] = next(time)
-        for v in G[u]:
-            if not visited[v]:
-                parent[v] = u
-                dfs(v, disc, low, parent, visited, bridges)
-                low[u] = min(low[u], low[v])
-                if low[v] > disc[u]:
-                    bridges.append([u, v])
-            elif v != parent[u]:
-                low[u] = min(low[u], disc[v])
-    time = iter(range(n))
-    for u in range(n):
-        if not visited[u]:
-            dfs(u, disc, low, parent, visited, bridges)
-    return bridges
+
+def tarjan(graph, num_vertices):
+    print('TARJAN')
+
 
 
 '''
+0. Receba uma lista de adjacências no formato [[],[]] -> OK
+1. Encontre uma floresta abrangente de G
+2. Crie uma floresta enraizada F a partir da floresta abrangente
+3. Percorra a floresta F em pré-ordem e numere os nós. Os nós pais na floresta agora têm números menores do que os nós filhos.
+4. Para cada nó v em pré-ordem (indicando cada nó usando seu número de pré-ordem), faça:
+    4.1. Calcule o número de descendentes de floresta ND(v) para este nó, adicionando um à soma dos descendentes de seus filhos.
+    4.2. Calcule L(v), o rótulo de pré-ordem mais baixo alcançável de v por um caminho para o qual todas, exceto a última aresta, permanecem dentro da subárvore enraizada em v. Este é o mínimo do conjunto que consiste no rótulo de pré-ordem de v, dos valores de L(w) em nós filhos de v e dos rótulos de pré-ordem de nós alcançáveis ​​de v por arestas que não pertencem a F.
+    4.3. Da mesma forma, calcule H(v), o rótulo de pré-ordem mais alto alcançável por um caminho para o qual todas, exceto a última aresta, permanecem dentro da subárvore com raiz em v. Este é o máximo do conjunto consistindo no rótulo de pré-ordem de v, dos valores de H(w) em nós filhos de v e dos rótulos de pré-ordem de nós alcançáveis ​​de v por arestas que não pertencem a F.
+    4.4. Para cada nó com nó pai v, se L(w) = w e H(w) < w + ND(w) então a aresta de v a w é uma ponte.
+5. Voltar à lista de pontes
+
 0. Receive an adjacency list in the format [[],[]]
-1.  Find a spanning forest of G
+1. Find a spanning forest of G
 2. Create a rooted forest F from the spanning forest
 3. Traverse the forest F in preorder and number the nodes. Parent nodes in the forest now have lower numbers than child nodes.
 4. For each node v in preorder (denoting each node using its preorder number), do:
