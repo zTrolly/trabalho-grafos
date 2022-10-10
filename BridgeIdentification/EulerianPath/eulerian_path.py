@@ -36,7 +36,7 @@ def FleuryTarjan(graph, num_vertices):
         caminho.append('VAZIO')
         end = time.time()
         return caminho, (end - start)
-    pontes = tarjan(graph, num_vertices) # Única linha alterada para usar o método do tarjan -> mais eficiente.
+    pontes = tarjan(adjacecy_list_graph_) # Única linha alterada para usar o método do tarjan -> mais eficiente.
     initial_vertex = getImparVertex(adjacecy_list_graph_)
     for i in range(len(graph)): # Passar por todas as arestas uma só vez
         if degreeVertex(adjacecy_list_graph_, initial_vertex) > 1:
