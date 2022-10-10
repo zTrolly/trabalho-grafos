@@ -2,7 +2,7 @@ import time
 import random
 import sys
 
-sys.setrecursionlimit(200000)
+sys.setrecursionlimit(10000)
 
 class Graph:
     def __init__(self, num_vertices):
@@ -26,10 +26,11 @@ class Graph:
             self.addEdges(i, i + 1)
         self.addEdges((self.num_vertices - 1), 0)
 
-'''
-Funcionando, porém não aceita grande quantidade de recursividade
-'''
 def bridges(G):
+    if len(G) == 0:
+        return []
+    if len(G) == 1:
+        return []
     bridges = []
     n = len(G)
     visited = [False] * n
@@ -137,7 +138,7 @@ def createGraphTest():
     return graph
 
 def main():
-    graph = Graph(100000)
+    graph = Graph(1000)
     graph.semiEurelianGraph()
     caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
