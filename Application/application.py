@@ -3,6 +3,7 @@ import sys
 sys.path.insert(0, '../RandomGraphs')
 sys.path.insert(1, '../BridgeIdentification')
 sys.path.insert(2, '../BridgeIdentification/EulerianPath')
+sys.setrecursionlimit(10000)
 
 # Importar classes e metodos de outros arquivos
 from random_graph import Graph # Classe
@@ -33,11 +34,16 @@ def createGraphTest():
 
 def main():
     #graph = createGraphTest()
-    graph = Graph(1000)
+    graph = Graph(2000)
     graph.semiEurelianGraph()
+
+    caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    #print(f'Caminho: {caminho}')
+
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
-    print(f'Caminho: {caminho}')
+    #print(f'Caminho: {caminho}')
 
 if __name__ == "__main__":
     main()

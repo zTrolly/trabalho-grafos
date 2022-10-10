@@ -8,11 +8,11 @@ def FleuryNaive(edges, num_vertices):
     start = time.time()
     caminho = list()
     adjacecy_list_graph_ = listaAdjacencia(edges, num_vertices)
-    pontes = naive_bridge(edges, num_vertices)
     if isValidGraph(adjacecy_list_graph_) == True:
         caminho.append('VAZIO')
         end = time.time()
         return caminho, (end - start)
+    pontes = naive_bridge(edges, num_vertices) # Pegar as pontes depois de conferir se o grafo é válido -> Custoso
     initial_vertex = getImparVertex(adjacecy_list_graph_)
     for i in range(len(edges)): # Passar por todas as arestas uma só vez
         if degreeVertex(adjacecy_list_graph_, initial_vertex) > 1:
@@ -32,11 +32,11 @@ def FleuryTarjan(graph, num_vertices):
     start = time.time()
     caminho = list()
     adjacecy_list_graph_ = listaAdjacencia(graph, num_vertices)
-    pontes = tarjan(graph, num_vertices) # Única linha alterada para usar o método do tarjan -> mais eficiente.
     if isValidGraph(adjacecy_list_graph_) == True:
         caminho.append('VAZIO')
         end = time.time()
         return caminho, (end - start)
+    pontes = tarjan(adjacecy_list_graph_) # Única linha alterada para usar o método do tarjan -> mais eficiente.
     initial_vertex = getImparVertex(adjacecy_list_graph_)
     for i in range(len(graph)): # Passar por todas as arestas uma só vez
         if degreeVertex(adjacecy_list_graph_, initial_vertex) > 1:
