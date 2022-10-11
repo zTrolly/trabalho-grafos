@@ -18,189 +18,26 @@ Alguns experimentos devem ser realizados em apenas uma máquina para avaliar o t
 --------------------
 <p style="font-size: 16px"> <strong> Resultado avaliação - tempo médio: </strong> </p>
 
-Todos os experimentos foram realizados em uma máquina com 16GB de memória RAM 4666MHz, com uma CPU i7-11600K - 4.3GHz, com SSD. Essas especificações de máquina podem ser alteradas.
+Todos os experimentos foram realizados em uma máquina: 
+- Processador i7-11390H - 3.4GHz - 2918Mhz - 4 núcleos 
+- Memória - 16GB - DDR4 - 3200MHz
+- Windows 11
+- SSD 500GB
 
-<br>
+Vale ressaltar que os tempos estão mostrando o tempo médio de descoberta de pontes em vários grafos aleatórios.
 
 <p style="font-size: 16px"> <strong> Método Naive: </strong> </p>
 
-<div align="center" class="table-responsive">
-
-<table class="table">
-  <tr>
-    <th>Vértices</th>
-    <th>Tipo grafo</th>
-    <th>Tempo</th>
-  </tr>
-  <tr>
-    <td>100</td>
-    <td>Euleriano</td>
-    <td>0.0028 s.</td>
-  </tr>
-  <tr>
-    <td>1000</td>
-    <td>Euleriano</td>
-    <td>0.3447 s.</td>
-  </tr>
-  <tr>
-    <td>10000</td>
-    <td>Euleriano</td>
-    <td>42.5453 s.</td>
-  </tr>
-  <tr>
-    <td>100000</td>
-    <td>Euleriano</td>
-    <td>X</td>
-  </tr>
-</table>
-
-<table class="table">
-  <tr>
-    <th>Vértices</th>
-    <th>Tipo grafo</th>
-    <th>Tempo</th>
-  </tr>
-  <tr>
-    <td>100</td>
-    <td>Semi-euleriano</td>
-    <td>0.0029 s.</td>
-  </tr>
-  <tr>
-    <td>1000</td>
-    <td>Semi-euleriano</td>
-    <td>0.3480 s.</td>
-  </tr>
-  <tr>
-    <td>10000</td>
-    <td>Semi-euleriano</td>
-    <td>42.2774 s.</td>
-  </tr>
-  <tr>
-    <td>100000</td>
-    <td>Semi-euleriano</td>
-    <td>X</td>
-  </tr>
-</table>
-
-<table class="table">
-  <tr>
-    <th>Vértices</th>
-    <th>Tipo grafo</th>
-    <th>Tempo</th>
-  </tr>
-  <tr>
-    <td>100</td>
-    <td>Não euleriano</td>
-    <td>0.0060 s.</td>
-  </tr>
-  <tr>
-    <td>1000</td>
-    <td>Não euleriano</td>
-    <td>0.8264 s.</td>
-  </tr>
-  <tr>
-    <td>10000</td>
-    <td>Não euleriano</td>
-    <td>42.6835 s.</td>
-  </tr>
-  <tr>
-    <td>100000</td>
-    <td>Não euleriano</td>
-    <td>X</td>
-  </tr>
-</table>
-
+<div align="center">
+  <img src="_Imagens/naive_table.png" width="350" title="hover text">
 </div>
 
 <hr>
 
 <p style="font-size: 16px"> <strong> Método Tarjan: </strong> </p>
-<div align="center" class="table-responsive">
 
-<table class="table">
-  <tr>
-    <th>Vértices</th>
-    <th>Tipo grafo</th>
-    <th>Tempo</th>
-  </tr>
-  <tr>
-    <td>100</td>
-    <td>Euleriano</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>1000</td>
-    <td>Euleriano</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>10000</td>
-    <td>Euleriano</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>100000</td>
-    <td>Euleriano</td>
-    <td>X</td>
-  </tr>
-</table>
-
-<table class="table">
-  <tr>
-    <th>Vértices</th>
-    <th>Tipo grafo</th>
-    <th>Tempo</th>
-  </tr>
-  <tr>
-    <td>100</td>
-    <td>Semi-euleriano</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>1000</td>
-    <td>Semi-euleriano</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>10000</td>
-    <td>Semi-euleriano</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>100000</td>
-    <td>Semi-euleriano</td>
-    <td>X</td>
-  </tr>
-</table>
-
-<table class="table">
-  <tr>
-    <th>Vértices</th>
-    <th>Tipo grafo</th>
-    <th>Tempo</th>
-  </tr>
-  <tr>
-    <td>100</td>
-    <td>Não euleriano</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>1000</td>
-    <td>Não euleriano</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>10000</td>
-    <td>Não euleriano</td>
-    <td>X</td>
-  </tr>
-  <tr>
-    <td>100000</td>
-    <td>Não euleriano</td>
-    <td>X</td>
-  </tr>
-</table>
-
+<div align="center">
+  <img src="_Imagens/tarjan_table.png" width="350" title="hover text">
 </div>
 
 --------------------
