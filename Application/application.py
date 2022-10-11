@@ -49,10 +49,36 @@ def createGraphTest2():
     return graph
 
 def main():
-    #graph = createGraphTest2()
-    graph = Graph(2000)
-    graph.semiEurelianGraph()
+    graph = Graph(100)
+    graph.eurelianGraph()
+    print('TARJAN - Euleriano')
+    caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
 
+    print('NAIVE - Euleriano')
+    caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
+
+    graph.semiEurelianGraph()
+    print('TARJAN - Semi-Euleriano')
+    caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
+
+    print('NAIVE - Semi-Euleriano')
+    caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
+
+    graph.notEurelianGraph()
+    print('TARJAN - Não Euleriano')
+    caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
+
+    print('NAIVE - Não Euleriano')
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')

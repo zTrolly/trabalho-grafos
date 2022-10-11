@@ -38,14 +38,15 @@ def FleuryTarjan(graph, num_vertices):
         end = time.time()
         return caminho, (end - start)
     initial_vertex = getImparVertex(adjacecy_list_graph_)
+    caminho.append(initial_vertex)
     for i in range(len(adjacecy_list_graph_)): # Passar por todas as arestas uma só vez
         pontes = tarjan(adjacecy_list_graph_) # Única linha alterada para usar o método do tarjan -> mais eficiente.
         if degreeVertex(adjacecy_list_graph_, initial_vertex) > 1:
             edge, vertex_caminhado = selectEdge(initial_vertex, adjacecy_list_graph_, pontes)
-            caminho.append(edge)
+            caminho.append(vertex_caminhado)
         else:
             edge = [initial_vertex, adjacecy_list_graph_[initial_vertex][0]]
-            caminho.append(edge)
+            caminho.append(edge[1])
             vertex_caminhado = adjacecy_list_graph_[initial_vertex][0]
         initial_vertex = vertex_caminhado
         adjacecy_list_graph_[edge[0]].remove(vertex_caminhado)

@@ -1,13 +1,13 @@
 # https://www2.eecs.berkeley.edu/Pubs/TechRpts/1974/ERL-m-427.pdf
 # https://memgraph.com/docs/mage/algorithms/traditional-graph-analytics/bridges-algorithm
 
-def tarjan(G):
-    if len(G) == 0:
+def tarjan(graph):
+    if len(graph) == 0:
         return []
-    if len(G) == 1:
+    if len(graph) == 1:
         return []
     bridges = []
-    n = len(G)
+    n = len(graph)
     visited = [False] * n
     low = [float('inf')] * n
     disc = [float('inf')] * n
@@ -15,7 +15,7 @@ def tarjan(G):
     def dfs(u, disc, low, parent, visited, bridges):
         visited[u] = True
         disc[u] = low[u] = next(time)
-        for v in G[u]:
+        for v in graph[u]:
             if not visited[v]:
                 parent[v] = u
                 dfs(v, disc, low, parent, visited, bridges)
