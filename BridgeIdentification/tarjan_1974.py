@@ -22,6 +22,7 @@ def tarjan(G):
                 low[u] = min(low[u], low[v])
                 if low[v] > disc[u]:
                     bridges.append([u, v])
+                    bridges.append([v, u])
             elif v != parent[u]:
                 low[u] = min(low[u], disc[v])
     time = iter(range(n))
