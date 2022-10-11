@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from create_adjacencyList import sorting
 from create_adjacencyList import listaAdjacencia
 
@@ -5,14 +7,15 @@ from create_adjacencyList import listaAdjacencia
 O código remove uma aresta do grafo, cria a lista de adjacência e confirma se o grafo é conexo ou não usando busca em largura.
 Caso a busca retorne False, ele adiciona a aresta removida na lista de pontes e retorna todas as pontes do grafo.
 '''
-def naive_bridge(grafo, num_vertices):
+def naive_bridge(grafo):
     pontes = list()
     for i in range(len(grafo)):
-        grafo_aux = grafo.copy()
-        grafo_aux.remove(grafo_aux[i])
-        lista_adj = listaAdjacencia(grafo_aux, num_vertices)
-        if is_connected(lista_adj) == False:
-            pontes.append(grafo[i])
+        for j in range(len(grafo[i])):
+            grafo_aux = deepcopy(grafo)
+            del(grafo_aux[i][j])
+            if is_connected(grafo_aux) == False:
+                pontes.append([i, grafo[i][j]])
+                pontes.append([grafo[i][j], i])
     return pontes
 
 '''
