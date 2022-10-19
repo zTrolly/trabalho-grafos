@@ -104,36 +104,6 @@ def tarjan(graph):
             bfs(u, visited)
     return bridges
     
-# def tarjan(graph):
-#     if len(graph) == 0:
-#         return []
-#     if len(graph) == 1:
-#         return []
-#     bridges = []
-#     n = len(graph)
-#     visited = [False] * n
-#     low = [float('inf')] * n
-#     disc = [float('inf')] * n
-#     parent = [-1] * n
-#     def dfs(u, disc, low, parent, visited, bridges):
-#         visited[u] = True
-#         disc[u] = low[u] = next(time)
-#         for v in graph[u]:
-#             if not visited[v]:
-#                 parent[v] = u
-#                 dfs(v, disc, low, parent, visited, bridges)
-#                 low[u] = min(low[u], low[v])
-#                 if low[v] > disc[u]:
-#                     bridges.append([u, v])
-#                     bridges.append([v, u])
-#             elif v != parent[u]:
-#                 low[u] = min(low[u], disc[v])
-#     time = iter(range(n))
-#     for u in range(n):
-#         if not visited[u]:
-#             dfs(u, disc, low, parent, visited, bridges)
-#     return bridges
-
 def naive_bridge(grafo):
     pontes = list()
     for i in range(len(grafo)):
@@ -238,40 +208,46 @@ def isValidGraph(graph):
         if count > 2: return True
     return False
 
+def createGraphTest():
+    graph = Graph(9)
+    graph.addEdges(0, 1)
+    graph.addEdges(0, 3)
+    graph.addEdges(0, 4)
+    graph.addEdges(1, 2)
+    graph.addEdges(1, 3)
+    graph.addEdges(1, 4)
+    graph.addEdges(2, 3)
+    graph.addEdges(2, 4)
+    graph.addEdges(2, 5)
+    graph.addEdges(3, 5)
+    graph.addEdges(4, 5)
+    graph.addEdges(5, 6)
+    graph.addEdges(6, 7)
+    graph.addEdges(6, 8)
+    graph.addEdges(7, 8)
+    return graph
+
+def createGraphTest2():
+    graph = Graph(7)
+    graph.addEdges(0, 1)
+    graph.addEdges(0, 2)
+    graph.addEdges(1, 2)
+    graph.addEdges(1, 3)
+    graph.addEdges(1, 4)
+    graph.addEdges(2, 3)
+    graph.addEdges(2, 5)
+    graph.addEdges(3, 4)
+    graph.addEdges(3, 5)
+    graph.addEdges(4, 5)
+    graph.addEdges(4, 6)
+    graph.addEdges(5, 6)
+    return graph
+
 def main():
-    graph = Graph(100)
-    graph.eurelianGraph()
-    print('TARJAN - Euleriano')
-    caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
-    print(f'Tempo de execução: {tempo} segundos.')
-    print(f'Caminho: {caminho}')
-
-    print('NAIVE - Euleriano')
-    caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
-    print(f'Tempo de execução: {tempo} segundos.')
-    print(f'Caminho: {caminho}')
-
-    graph.semiEurelianGraph()
-    print('TARJAN - Semi-Euleriano')
-    caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
-    print(f'Tempo de execução: {tempo} segundos.')
-    print(f'Caminho: {caminho}')
-
-    print('NAIVE - Semi-Euleriano')
-    caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
-    print(f'Tempo de execução: {tempo} segundos.')
-    print(f'Caminho: {caminho}')
-
-    graph.notEurelianGraph()
-    print('TARJAN - Não Euleriano')
-    caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
-    print(f'Tempo de execução: {tempo} segundos.')
-    print(f'Caminho: {caminho}')
-
-    print('NAIVE - Não Euleriano')
-    caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
-    print(f'Tempo de execução: {tempo} segundos.')
-    print(f'Caminho: {caminho}')
+    graph = createGraphTest()
+    lisaa = listaAdjacencia(graph.graph, graph.num_vertices)
+    print(tarjan(lisaa))
+    print(naive_bridge(lisaa))
 
 if __name__ == "__main__":
     main()
