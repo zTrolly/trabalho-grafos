@@ -3,7 +3,7 @@ import time
 import sys
 from copy import deepcopy
 
-sys.setrecursionlimit(10000000)
+sys.setrecursionlimit(100000000)
 
 class Graph:
     def __init__(self, num_vertices):
@@ -38,17 +38,21 @@ class Graph:
 
     '''
     Um grafo não eureliano é um grafo que não tem as condições iguais ao eureliano e semi-eureliano
-    - Cria um grafo aleatório com o grau do vértice sorteado até grau 10, sendo um grafo totalmente aleatório
+    - Cria um grafo eureliano e sorteia duas arestas para transformar 4 vértices em grau ímpar.
     '''
     def notEurelianGraph(self):
-        for vertex in range(0, self.num_vertices):
-            randomDegree = random.randint(1, 2)
-            for _ in range(0, randomDegree):
-                randomEdgeV = random.randint(0, (self.num_vertices - 1))
-                while vertex == randomEdgeV:
-                    randomEdgeV = random.randint(0, (self.num_vertices - 1))
-                if [vertex, randomEdgeV] not in self.graph:
-                    self.addEdges(vertex, randomEdgeV)
+        self.eurelianGraph()
+        randomEdgeU = random.randint(0, (self.num_vertices - 1))
+        randomEdgeV = random.randint(0, (self.num_vertices - 1))
+        randomEdgeUy = random.randint(0, (self.num_vertices - 1))
+        randomEdgeVy = random.randint(0, (self.num_vertices - 1))
+        while randomEdgeU == randomEdgeV or randomEdgeUy == randomEdgeVy and (randomEdgeU, randomEdgeV) != (randomEdgeUy, randomEdgeVy):
+            randomEdgeU = random.randint(0, (self.num_vertices - 1))
+            randomEdgeV = random.randint(0, (self.num_vertices - 1))
+            randomEdgeUy = random.randint(0, (self.num_vertices - 1))
+            randomEdgeVy = random.randint(0, (self.num_vertices - 1))
+        self.addEdges(randomEdgeU, randomEdgeV)
+        self.addEdges(randomEdgeUy, randomEdgeVy)
 
     def printGraph(self):
         for i in range(0, len(self.graph)):
@@ -159,7 +163,7 @@ def FleuryTarjan(graph, num_vertices):
         return caminho, (end - start)
     initial_vertex = getImparVertex(adjacecy_list_graph_)
     caminho.append(initial_vertex)
-    for i in range(len(adjacecy_list_graph_)): # Passar por todas as arestas uma só vez
+    for _ in range(len(adjacecy_list_graph_)): # Passar por todas as arestas uma só vez
         pontes = tarjan(adjacecy_list_graph_) # Única linha alterada para usar o método do tarjan -> mais eficiente.
         if degreeVertex(adjacecy_list_graph_, initial_vertex) > 1:
             edge, vertex_caminhado = selectEdge(initial_vertex, adjacecy_list_graph_, pontes)
@@ -201,6 +205,7 @@ def isValidGraph(graph):
 
 def main():
     graph = Graph(100)
+
     graph.eurelianGraph()
     print('TARJAN - Euleriano')
     caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
@@ -211,6 +216,8 @@ def main():
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
+
+    print("===========================================================")
 
     graph.semiEurelianGraph()
     print('TARJAN - Semi-Euleriano')
@@ -223,6 +230,8 @@ def main():
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
 
+    print("===========================================================")
+
     graph.notEurelianGraph()
     print('TARJAN - Não Euleriano')
     caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
@@ -233,6 +242,7 @@ def main():
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
+
 
 if __name__ == "__main__":
     main()
