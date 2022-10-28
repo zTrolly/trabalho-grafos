@@ -1,5 +1,3 @@
-# https://codeforces.com/blog/entry/71146
-
 def tarjan(graph):
     low = disc = [float('inf')] * len(graph)
     pontes = list()
