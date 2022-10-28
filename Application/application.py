@@ -49,6 +49,7 @@ def createGraphTest2():
     return graph
 
 def main():
+    '''
     graph = createGraphTest()
 
     print('TARJAN - Grafo teste 1')
@@ -62,8 +63,6 @@ def main():
     print(f'Caminho: {caminho}')
 
     print("===========================================================")
-
-    graph = createGraphTest()
 
     print('TARJAN - Grafo teste 2')
     caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
@@ -115,7 +114,7 @@ def main():
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
-    '''
+    
 
 if __name__ == "__main__":
     main()

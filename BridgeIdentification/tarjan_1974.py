@@ -1,31 +1,21 @@
 # https://codeforces.com/blog/entry/71146
 
 def tarjan(graph):
-    if len(graph) == 0:
-        return []
-    if len(graph) == 1:
-        return []
-    bridges = []
-    n = len(graph)
-    visited = [False] * n
-    low = [float('inf')] * n
-    disc = [float('inf')] * n
-    parent = [-1] * n
-    def dfs(u, disc, low, parent, visited, bridges):
-        visited[u] = True
-        disc[u] = low[u] = next(time)
+    low = disc = [float('inf')] * len(graph)
+    pontes = list()
+    time = iter(range(len(graph)))
+    def search(u, p):
+        low[u] = disc[u] = next(time)
         for v in graph[u]:
-            if not visited[v]:
-                parent[v] = u
-                dfs(v, disc, low, parent, visited, bridges)
+            if v == p: continue
+            if not disc[v]:
+                search(u, v)
+                if disc[u] < low[v]:
+                    pontes.append([u, v])
                 low[u] = min(low[u], low[v])
-                if low[v] > disc[u]:
-                    bridges.append([u, v])
-                    bridges.append([v, u])
-            elif v != parent[u]:
+            else:
                 low[u] = min(low[u], disc[v])
-    time = iter(range(n))
-    for u in range(n):
-        if not visited[u]:
-            dfs(u, disc, low, parent, visited, bridges)
-    return bridges
+    for u in range(len(graph)):
+        if not disc[u]:
+            search(u, u)
+    return pontes
