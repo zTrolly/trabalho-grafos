@@ -33,17 +33,21 @@ class Graph:
 
     '''
     Um grafo não eureliano é um grafo que não tem as condições iguais ao eureliano e semi-eureliano
-    - Cria um grafo aleatório com o grau do vértice sorteado até grau 10, sendo um grafo totalmente aleatório
+    - Cria um grafo eureliano e sorteia duas arestas para transformar 4 vértices em grau ímpar.
     '''
     def notEurelianGraph(self):
-        for vertex in range(0, self.num_vertices):
-            randomDegree = random.randint(1, 2)
-            for _ in range(0, randomDegree):
-                randomEdgeV = random.randint(0, (self.num_vertices - 1))
-                while vertex == randomEdgeV:
-                    randomEdgeV = random.randint(0, (self.num_vertices - 1))
-                if [vertex, randomEdgeV] not in self.graph:
-                    self.addEdges(vertex, randomEdgeV)
+        self.eurelianGraph()
+        randomEdgeU = random.randint(0, (self.num_vertices - 1))
+        randomEdgeV = random.randint(0, (self.num_vertices - 1))
+        randomEdgeUy = random.randint(0, (self.num_vertices - 1))
+        randomEdgeVy = random.randint(0, (self.num_vertices - 1))
+        while randomEdgeU == randomEdgeV or randomEdgeUy == randomEdgeVy and (randomEdgeU, randomEdgeV) != (randomEdgeUy, randomEdgeVy):
+            randomEdgeU = random.randint(0, (self.num_vertices - 1))
+            randomEdgeV = random.randint(0, (self.num_vertices - 1))
+            randomEdgeUy = random.randint(0, (self.num_vertices - 1))
+            randomEdgeVy = random.randint(0, (self.num_vertices - 1))
+        self.addEdges(randomEdgeU, randomEdgeV)
+        self.addEdges(randomEdgeUy, randomEdgeVy)
 
     def printGraph(self):
         for i in range(0, len(self.graph)):

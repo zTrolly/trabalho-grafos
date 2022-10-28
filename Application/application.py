@@ -49,39 +49,72 @@ def createGraphTest2():
     return graph
 
 def main():
-    graph = Graph(100)
-    graph.eurelianGraph()
-    print('TARJAN - Euleriano')
+    '''
+    graph = createGraphTest()
+
+    print('TARJAN - Grafo teste 1')
     caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
 
-    print('NAIVE - Euleriano')
+    print('NAIVE - Grafo teste 1')
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
+
+    print("===========================================================")
+
+    print('TARJAN - Grafo teste 2')
+    caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
+
+    print('NAIVE - Grafo teste 2')
+    caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
+
+    # Caso queira testar com o grafo aleatório basta retirar os comentários.
+    '''
+    graph = Graph(100)
+
+    graph.eurelianGraph()
+    print('TARJAN - EURELIAN')
+    caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
+
+    print('NAIVE - EURELIAN')
+    caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
+    print(f'Tempo de execução: {tempo} segundos.')
+    print(f'Caminho: {caminho}')
+
+    print("===========================================================")
 
     graph.semiEurelianGraph()
-    print('TARJAN - Semi-Euleriano')
+    print('TARJAN - SEMI-EURELIAN')
     caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
 
-    print('NAIVE - Semi-Euleriano')
+    print('NAIVE - SEMI-EURELIAN')
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
+
+    print("===========================================================")
 
     graph.notEurelianGraph()
-    print('TARJAN - Não Euleriano')
+    print('TARJAN - NOT EURELIAN')
     caminho, tempo = FleuryTarjan(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
 
-    print('NAIVE - Não Euleriano')
+    print('NAIVE -  NOT EURELIAN')
     caminho, tempo = FleuryNaive(graph.graph, graph.num_vertices)
     print(f'Tempo de execução: {tempo} segundos.')
     print(f'Caminho: {caminho}')
+    
 
 if __name__ == "__main__":
     main()
