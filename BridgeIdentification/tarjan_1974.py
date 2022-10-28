@@ -12,6 +12,7 @@ def tarjan(graph):
                 search(u, v)
                 if disc[u] < low[v]:
                     pontes.append([u, v])
+                    pontes.append([v, u])
                 low[u] = min(low[u], low[v])
             else:
                 low[u] = min(low[u], disc[v])

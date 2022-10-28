@@ -1,8 +1,8 @@
 <h1> Trabalho Grafos </h1>
 
-> **Status do Projeto:** Em desenvolvimento ⚠️
+> **Status do Projeto:** Completo ✅
 
-> **Documentação:** [LaTeX](https://www.overleaf.com/2134921852dhsmmwyjjjqv)
+> **Documentação:** [LaTeX](https://github.com/zTrolly/trabalho-grafos/tree/main/Documentation)
 
 O intuito desse trabalho prático é criar dois métodos para indentificação de pontes. Pontes são arestas cuja a remoção torna o grafo desconexo. Dentre as aplicações de indentificações de pontes está encontrar os caminhos ou ciclos eurelianos em diferentes grafos, sendo os métodos de identificação de pontes e suas respectivos diretórios:
 - [Método Naive](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/naive.py)
