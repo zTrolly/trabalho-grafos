@@ -47,3 +47,13 @@ Vale ressaltar que os tempos estão mostrando o tempo médio de descoberta de po
 - `RandomGraphs:` possui o código feito para criação de grafos de N quantidade de vértices dos tipos euleriano, semi-euleriano e não euleriano.
 - `BridgeIdentification:` implementação dos métodos Naive e Tarjan.
   - `EulerianPath:` implementação do algoritmo de busca de um caminho euleriano no grafo criado.
+
+--------------------
+<p style="font-size: 16px"> <strong> Execução do código: </strong> </p>
+Para executar o código basta clonar o repositório e entrar na IDE VsCode ou qualquer uma de sua preferência, porém o VsCode foi utilizado para fazer o trabalho. Com isso, basta executar os seguintes comandos em um terminal.
+
+<br>
+
+```bash
+~python application.py
+```
