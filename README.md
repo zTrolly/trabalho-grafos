@@ -2,7 +2,7 @@
 
 > **Status do Projeto:** Completo ✅
 
-> **Documentação:** [LaTeX](https://github.com/zTrolly/trabalho-grafos/tree/main/Documentation)
+> **Documentação:** [PDF](https://github.com/zTrolly/trabalho-grafos/blob/main/Documenta%C3%A7%C3%A3o%20-%20Fleury%20e%20identifica%C3%A7%C3%A3o%20de%20pontes.pdf)
 
 O intuito desse trabalho prático é criar dois métodos para indentificação de pontes. Pontes são arestas cuja a remoção torna o grafo desconexo. Dentre as aplicações de indentificações de pontes está encontrar os caminhos ou ciclos eurelianos em diferentes grafos, sendo os métodos de identificação de pontes e suas respectivos diretórios:
 - [Método Naive](https://github.com/zTrolly/trabalho-grafos/blob/main/BridgeIdentification/naive.py)
